@@ -4,7 +4,7 @@ I will be updating the documentation near soon.
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+I will be updating the documentation near soon.
 
 ## Contributing
 
