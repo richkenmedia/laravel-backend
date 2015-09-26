@@ -1,7 +1,7 @@
-@extends('master')
-@section('page-title')
-Home
-@endsection
+@extends('frontend.frontend')
+
+@section('page-title', 'Home Page')
+
 @section('page-content')
-	Front View
+	Home Page
 @endsection

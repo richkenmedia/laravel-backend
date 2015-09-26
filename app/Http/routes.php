@@ -13,6 +13,11 @@
 
 Route::get('/', function () { return view('frontend.home'); });
 
+Route::get('auth/login', 'Auth\AuthController@login');
+
+Route::resource('auth', 'Auth\AuthController');
+
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::any('/', function(){ 
 		return view("admin.default");

@@ -22,7 +22,7 @@ class SentinelMiddleware
         }
         else
         {
-            return view("auth.login");
+            return redirect('auth/login');
         }
         
     }
