@@ -15,8 +15,7 @@ Route::get('/', function () { return view('frontend.home'); });
 
 Route::get('auth/login', 'Auth\AuthController@login');
 
-Route::resource('auth', 'Auth\AuthController');
-
+Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::any('/', function(){ 
