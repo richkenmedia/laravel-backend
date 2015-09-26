@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('frontend.home'); });
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('users', function ()    {
-        // Matches The "/admin/users" URL
-        return "testing";
+	Route::any('/', function(){ 
+		return view("admin.default");
+	});
+    Route::get('users', function(){  
+    	return "testing"; 
     });
 });

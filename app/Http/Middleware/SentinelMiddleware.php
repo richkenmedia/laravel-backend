@@ -22,7 +22,7 @@ class SentinelMiddleware
         }
         else
         {
-            echo "You are restricted!";
+            return view("auth.login");
         }
         
     }
