@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- The content area seciton comes here -->
-    <div class="container"> 
+    <div class="container" id="page-wrapper"> 
       @yield('page-content')
     </div>
     <!-- The content area seciton comes here -->

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Sentinel;
+use Response;
 
 class AuthController extends Controller
 {
@@ -22,7 +23,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Check User form.
+     * Accepts user inputs.
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,10 +32,31 @@ class AuthController extends Controller
         $credentials['email'] = $request->input('username');
         $credentials['password'] = $request->input('password');
         $result = Sentinel::authenticate($credentials);
-        if($result):
-            return $result;
-        else:
-            return 'false';
-        endif;
+
+        return Response::json($result);
+    }
+
+    /**
+     * Displays a new login form.
+     *
+     * @return \Illuminate\Http\Response //this will be added later
+     */
+    public function create()
+    {
+         return view('');
+    }
+
+    /**
+     * Create record with the form fileds.
+     *
+     * @return \Illuminate\Http\Response //this will be added later
+     */
+    public function store(Request $request)
+    {
+        $credentials['email'] = $request->input('username');
+        $credentials['password'] = $request->input('password');
+        $result = Sentinel::authenticate($credentials);
+
+        return Response::json($result);
     }
 }

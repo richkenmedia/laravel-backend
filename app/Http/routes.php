@@ -13,9 +13,11 @@
 
 Route::get('/', function () { return view('frontend.home'); });
 
-Route::get('auth/login', 'Auth\AuthController@login');
+Route::group(['prefix' => 'auth'], function () {
+	Route::get('login', 'Auth\AuthController@login');
 
-Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);
+	Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::any('/', function(){ 
