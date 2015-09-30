@@ -13,11 +13,15 @@
 
 Route::get('/', function () { return view('frontend.home'); });
 
+//Custom URL's, recommended to put just before the resource route declaration
 Route::group(['prefix' => 'auth'], function () {
 	Route::get('login', 'Auth\AuthController@login');
 
-	Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);
+	Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);	
 });
+
+// default resource routing for all HTTP verbs comes here
+Route::resource('auth', 'Auth\AuthController');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	Route::any('/', function(){ 
