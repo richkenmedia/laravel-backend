@@ -10,24 +10,31 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function () { return view('frontend.home'); });
 
-//Custom URL's, recommended to put just before the resource route declaration
-Route::group(['prefix' => 'auth'], function () {
-	Route::get('login', 'Auth\AuthController@login');
+Route::group(['prefix' => 'user'], function () {
+	Route::get('login', 'UserController@login');
+	Route::post('login', 'UserController@loginCheck');
+	Route::get('logout', 'UserController@logout');
+	Route::get('signup', function () { return view('users.signup'); });
+	Route::post('signup', 'UserController@signup');
 
-	Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@loginCheck']);	
+
+
+
+	Route::get('password-reset/{id}/{token}', ['as' => 'reminders.edit', 'uses' => 'ReminderController@edit']);
+	Route::post('password-reset/{id}/{token}', ['as' => 'reminders.update', 'uses' => 'ReminderController@update']);
+	Route::get('forgot-password', 'ReminderController@create');
+	Route::post('forgot-password', 'ReminderController@store');		
 });
-
-// default resource routing for all HTTP verbs comes here
-Route::resource('auth', 'Auth\AuthController');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-	Route::any('/', function(){ 
-		return view("admin.default");
-	});
-    Route::get('users', function(){  
-    	return "testing"; 
-    });
+    Route::get('/', function() { return view("admin.home"); });
+    Route::get('groups', 'GroupController@index');
+	Route::post('group/delete-all', 'GroupController@deleteAll');
+	Route::resource('group', 'GroupController');
+	Route::post('user/delete-all', 'UserController@deleteAll');
+	Route::get('users', 'UserController@index');
+	Route::resource('user', 'UserController');
 });
+

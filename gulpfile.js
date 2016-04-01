@@ -12,11 +12,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-	mix
-		.copy('vendor/twitter/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap.min.css')
-		.copy('vendor/twitter/bootstrap/dist/js/bootstrap.min.js', 'resources/assets/js/bootstrap.min.js')
-		.copy('vendor/twitter/bootstrap/dist/fonts', 'public/fonts')
-		.copy('vendor/components/jquery/jquery.min.js', 'resources/assets/js/jquery.min.js')
+	mix		
+		.copy('resources/assets/jquery/dist/jquery.min.js', 'resources/assets/js/jquery.min.js')
+		.copy('resources/assets/bootstrap/dist/js/bootstrap.min.js', 'resources/assets/js/bootstrap.min.js')
+		.copy('resources/assets/angular/angular.min.js', 'resources/assets/js/angular.min.js')
+		.copy('resources/assets/bootstrap/dist/css/bootstrap.min.css', 'resources/assets/css/bootstrap.min.css')
+		.copy('resources/assets/bootstrap/dist/fonts', 'public/fonts')
+		.copy('resources/assets/font-awesome/fonts', 'public/fonts')
 		.styles([
 			'bootstrap.min.css',
 			'common.css'
@@ -24,6 +26,7 @@ elixir(function(mix) {
 		.scripts([
 			'jquery.min.js',
 			'bootstrap.min.js',
+			'angular.min.js',
 			'common.js'
 		])
 });

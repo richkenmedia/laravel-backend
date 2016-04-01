@@ -1,0 +1,23 @@
+{
+  "name": "polymer",
+  "version": "0.0.0",
+  "authors": [
+    "Shine Sudarsanan <shine@emvigotech.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}

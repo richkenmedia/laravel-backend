@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'IY7fand0p0OCLS7jZXf5hRTHlHhoin1m'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -146,8 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class
     ],
 
     /*
@@ -202,7 +201,7 @@ return [
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
 
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class
 
     ],
 

@@ -16,14 +16,10 @@ class SentinelMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($user = Sentinel::check())
-        {
+        if ($user = Sentinel::check()) {
             return $next($request);
+        } else {
+            return redirect('user/login');
         }
-        else
-        {
-            return redirect('auth/login');
-        }
-        
     }
 }

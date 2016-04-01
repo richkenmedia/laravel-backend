@@ -1,0 +1,22 @@
+{
+  "name": "laravel-backend",
+  "version": "1.0.0",
+  "authors": [
+    "Shine Sudarsanan shine@emvigotech.com>"
+  ],
+  "description": "A backend framework for Laravel",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components/",
+    "test",
+    "tests"
+  ]
+}
