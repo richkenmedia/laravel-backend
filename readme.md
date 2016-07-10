@@ -2,9 +2,20 @@
 
 I will be updating the documentation near soon.
 
-## Official Documentation
+## Installation
 
-I will be updating the documentation near soon.
+1. clone the repo
+2. From project folder's root terminal, run "composer install"
+3. Set database credentials in ".env" file
+4. Run "php artisan migrate"
+5. Run "php artisan db:seed"
+6. Run "php artisan serve"
+7. Now type "http://localhost:8000" you can see the front end there.
+8. Admin Panel Login "http://localhost:8000/admin" will redirect you to login page.
+9. User Name : "user@admin.com" Password : "ReM1@Et$"
+10. Admin User Name : "admin@admin.com"  Password : "1Ade$Er32"
+
+Still need to do a lot of things, I will be updating soon.
 
 ## Contributing
 

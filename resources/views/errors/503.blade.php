@@ -1,4 +1,4 @@
-@extends('frontend-master')
+@extends('frontend')
 
 @section('title', '404!')
 

@@ -7,15 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">DSS</a>
+            <a href="#" class="navbar-brand">Dashboard</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Campaign</a></li>
-                <li><a href="#">Layout</a></li>
-                <li><a href="#">Media</a></li>
-                <li><a href="#">Display</a></li>
-                <li><a href="#">Schedule</a></li>
+                <li><a href="{{ url('admin/users') }}">Users</a></li>
+                <li><a href="{{ url() }}">Groups</a></li>
+                <li><a href="{{ url() }}">Profiles</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -24,7 +22,7 @@
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Settings</a></li>
                         <li class="divider" role="separator"></li>
-                        <li><a href="{{ url('user/logout') }}">Logout</a></li>
+                        <li><a href="{{ url('auth/logout') }}">Logout</a></li>
                     </ul>
                 </li>
             </ul>
