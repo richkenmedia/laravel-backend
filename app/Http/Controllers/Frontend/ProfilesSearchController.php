@@ -1,14 +1,13 @@
 <?php
 
-namespace app\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Http\Requests\UpdateUserRequest;
-use Session;
 
-class UserController extends Controller
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class ProfilesSearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return view('users.index', compact('users'));
+        //
     }
 
     /**
@@ -35,8 +32,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,8 +43,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -59,47 +54,30 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-        return view('users.edit', compact('user'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        if ($user->save()) {
-            Session::flash('success', 'Created Successfully!!');
-
-            return redirect('admin/users');
-        } else {
-            Session::flash('errors', 'Sorry, something went wrong!');
-
-            return redirect('admin/users')->withErros();
-        }
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -1,14 +1,12 @@
 <?php
 
-namespace app\Http\Controllers\Auth;
+namespace app\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Http\Requests\UpdateUserRequest;
-use Session;
+use App\Profile;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $profiles = Profile::all();
 
-        return view('users.index', compact('users'));
+        return view('profiles.index', compact('profiles'));
     }
 
     /**
@@ -29,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('profiles.create');
     }
 
     /**
@@ -53,7 +51,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('profiles.show');
     }
 
     /**
@@ -65,9 +63,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-        return view('users.edit', compact('user'));
+        return view('profiles.edit');
     }
 
     /**
@@ -78,21 +74,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        if ($user->save()) {
-            Session::flash('success', 'Created Successfully!!');
-
-            return redirect('admin/users');
-        } else {
-            Session::flash('errors', 'Sorry, something went wrong!');
-
-            return redirect('admin/users')->withErros();
-        }
+        //
     }
 
     /**
