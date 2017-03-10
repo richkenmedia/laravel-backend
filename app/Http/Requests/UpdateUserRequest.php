@@ -4,7 +4,7 @@ namespace app\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateRoleRequest extends Request
+class UpdateUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class CreateRoleRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|unique:user,name',
-            'email' => 'required|unique:user,email',
+            'name' => 'required|unique:users,name,'.$this->segment(3),
+            'email' => 'required|unique:users,password,'.$this->segment(3),
+            'password' => 'required',
         ];
     }
 }

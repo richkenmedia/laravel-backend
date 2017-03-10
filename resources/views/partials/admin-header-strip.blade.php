@@ -12,8 +12,8 @@
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('admin/users') }}">Users</a></li>
-                <li><a href="{{ url() }}">Groups</a></li>
-                <li><a href="{{ url() }}">Profiles</a></li>
+                <li><a href="{{ url('admin/roles') }}">Groups</a></li>
+                <li><a href="{{ url('admin/profiles') }}">Profiles</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

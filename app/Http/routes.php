@@ -32,12 +32,14 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
-        return view("admin");
+        return view('admin');
     });
     Route::post('roles/delete-all', 'Auth\RoleController@deleteAll');
     Route::resource('roles', 'Auth\RoleController');
 
-    //Route::get('users/delete-all', 'UserController@deleteAll');
-    //Route::resource('users', 'UserController');
+    Route::get('users/delete-all', 'UserController@deleteAll');
     Route::resource('users', 'Auth\UserController');
+
+    Route::get('profiles/delete-all', 'Admin\ProfileController@deleteAll');
+    Route::resource('profiles', 'Admin\ProfileController');
 });

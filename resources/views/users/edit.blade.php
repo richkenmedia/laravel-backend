@@ -1,4 +1,4 @@
-@extends('admin.home')
+@extends('admin')
 
 @section('title', 'Edit User')
 
@@ -8,7 +8,7 @@
 			<div class="section-header">
 				<h1>Edit User</h1></br>
 			</div>
-			{!! Form::open(array('url' => 'admin/user/'.$id, 'method'=>'put')) !!}
+			{!! Form::model($user, array('url' => 'admin/users/'.$user->id, 'method' => 'put')) !!}
 				<div class="row">
 					<div class="col-xs-12 col-md-12">
 						@if (count($errors) > 0)
@@ -27,26 +27,10 @@
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-12 col-md-2">
-						{!! Form::label('firstname', 'First Name') !!}
+						{!! Form::label('name', 'Name') !!}
 					</div>
 					<div class="col-xs-12 col-md-10">
-						{!! Form::text('firstname', $user->first_name , array('class' => 'form-control', 'autocomplete' => 'off')) !!}
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-12 col-md-2">
-						{!! Form::label('lastname', 'Last Name') !!}
-					</div>
-					<div class="col-xs-12 col-md-10">
-						{!! Form::text('lastname', $user->last_name, array('class' => 'form-control', 'autocomplete' => 'off')) !!}
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-12 col-md-2">
-						{!! Form::label('username', 'User Name') !!}
-					</div>
-					<div class="col-xs-12 col-md-10">
-						{!! Form::text('username', $user->username, array('class' => 'form-control', 'autocomplete' => 'off')) !!}
+						{!! Form::text('name', $user->name , array('class' => 'form-control', 'autocomplete' => 'off')) !!}
 					</div>
 				</div>
 				<div class="form-group row">
